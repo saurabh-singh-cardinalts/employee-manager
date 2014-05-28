@@ -39,10 +39,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IRoleSpecification.cs" />
+    <Compile Include="Interfaces\IUserSpecification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserSpecification.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\" />
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EM.Data\EM.Data.csproj">
+      <Project>{30d513cf-f8ca-40e2-bd45-c7a11c61ee40}</Project>
+      <Name>EM.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EM.Framework\EM.Framework.csproj">
+      <Project>{ac1e7d21-a7c3-4a03-98cb-531ffbe30157}</Project>
+      <Name>EM.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

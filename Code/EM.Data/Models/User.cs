@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using EM.Model;
 
-namespace EM.Model
+namespace EM.Data.Models
 {
-    public class User 
+    public class User : BaseEntity
     {
         public int Id { get; set; }
         public string UserName { get; set; }

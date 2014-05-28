@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EM.Model
+namespace EM.Data.Models
 {
     public class EMMembership
     {
@@ -47,22 +47,6 @@ namespace EM.Model
         public string EmailAddress { get; set; }
         public string MobileNumber { get; set; }
         public string OtherNumber { get; set; }
-    }
-
-    public class Role
-    {
-        public Roles Value { get; set; }
-        public string RoleName
-        {
-            get { return Value.ToString(); }
-            set
-            {
-                Roles role;
-                if (Enum.TryParse(value, true, out role))
-                    Value = role;
-            }
-        }
-
     }
 
     public class OtherInformation

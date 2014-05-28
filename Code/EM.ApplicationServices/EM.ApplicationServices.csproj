@@ -45,18 +45,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountMembershipService.cs" />
     <Compile Include="FormsAuthenticationService.cs" />
+    <Compile Include="Infrastructure\EMApplicationConstants.cs" />
+    <Compile Include="Infrastructure\EMApplicationException.cs" />
+    <Compile Include="Interfaces\IAccountMembershipService.cs" />
+    <Compile Include="ServiceModel\AccountData.cs" />
+    <Compile Include="ServiceModel\AccountServiceResponse.cs" />
     <Compile Include="UserData.cs" />
     <Compile Include="Interfaces\IFormsAuthenticationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EM.Data\EM.Data.csproj">
       <Project>{30d513cf-f8ca-40e2-bd45-c7a11c61ee40}</Project>
       <Name>EM.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EM.Framework\EM.Framework.csproj">
+      <Project>{ac1e7d21-a7c3-4a03-98cb-531ffbe30157}</Project>
+      <Name>EM.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EM.Specification\EM.Specification.csproj">
+      <Project>{c2492a04-3b72-4260-bb01-3d805154d1b5}</Project>
+      <Name>EM.Specification</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
