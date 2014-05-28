@@ -1,1 +1,11 @@
 /Code/packages
+/Code/EM.ApplicationServices/bin
+/Code/EM.ApplicationServices/obj
+/Code/EM.Data/obj
+/Code/EM.Data/bin
+/Code/EM.Framework/obj
+/Code/EM.Framework/bin
+/Code/EM.Specification/obj
+/Code/EM.Specification/bin
+/Code/EM.Web/obj
+/Code/EM.Web/bin
