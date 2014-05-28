@@ -214,23 +214,26 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
-    <Content Include="Scripts\jquery-2.1.1.js" />
-    <Content Include="Scripts\jquery-2.1.1.min.js" />
-    <Content Include="Scripts\jquery-2.1.1.min.map" />
-    <Content Include="Scripts\jquery-ui-1.10.4.js" />
-    <Content Include="Scripts\jquery-ui-1.10.4.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\knockout-3.1.0.debug.js" />
-    <Content Include="Scripts\knockout-3.1.0.js" />
-    <Content Include="Scripts\modernizr-2.7.2.js" />
-    <Content Include="Scripts\_references.js" />
+    <None Include="Scripts\lib\jquery-2.1.1.intellisense.js" />
+    <None Include="Scripts\lib\amplify-vsdoc.js" />
+    <Content Include="Scripts\lib\amplify.js" />
+    <Content Include="Scripts\lib\amplify.min.js" />
+    <Content Include="Scripts\lib\jquery-2.1.1.js" />
+    <Content Include="Scripts\lib\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\lib\jquery-2.1.1.min.map" />
+    <Content Include="Scripts\lib\jquery-ui-1.10.4.js" />
+    <Content Include="Scripts\lib\jquery-ui-1.10.4.min.js" />
+    <None Include="Scripts\lib\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\lib\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\lib\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\lib\jquery.validate.js" />
+    <Content Include="Scripts\lib\jquery.validate.min.js" />
+    <Content Include="Scripts\lib\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\lib\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\lib\knockout-3.1.0.debug.js" />
+    <Content Include="Scripts\lib\knockout-3.1.0.js" />
+    <Content Include="Scripts\lib\modernizr-2.7.2.js" />
+    <Content Include="Scripts\lib\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -247,6 +250,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\app\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
