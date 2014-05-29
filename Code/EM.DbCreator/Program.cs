@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using EM.Data;
 
 
@@ -56,12 +52,7 @@ namespace EM.DbCreator
             var context = new EMContext();
             Database.SetInitializer(new EMMigrationInitializer<EMContext>());
             context.Database.Initialize(true);
-
         }
 
     }
-
-   
-
-    
 }

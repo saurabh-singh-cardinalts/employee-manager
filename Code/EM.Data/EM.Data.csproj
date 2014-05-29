@@ -50,6 +50,8 @@
   <ItemGroup>
     <Compile Include="EMContext.cs" />
     <Compile Include="EMDBInitializer.cs" />
+    <Compile Include="EMMigrationConfiguration.cs" />
+    <Compile Include="EMMigrationInitializer.cs" />
     <Compile Include="Mappings\UserConfiguration.cs" />
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\EMMembership.cs" />
