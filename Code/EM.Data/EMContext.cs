@@ -1,7 +1,6 @@
 ﻿using System.Data.Entity;
 using EM.Data.Mappings;
 using EM.Data.Models;
-using EM.Model;
 
 namespace EM.Data
 {
@@ -16,6 +15,8 @@ namespace EM.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new UserConfiguration());
+            modelBuilder.Configurations.Add(new RoleConfiguration());
+            modelBuilder.Configurations.Add(new MembershipConfiguration());
             base.OnModelCreating(modelBuilder);
         }
     }

@@ -1,5 +1,5 @@
-﻿using EM.Framework.Data.Repository;
-using EM.Model;
+﻿using EM.Data.Models;
+using EM.Framework.Data.Repository;
 
 namespace EM.Specification.Interfaces
 {

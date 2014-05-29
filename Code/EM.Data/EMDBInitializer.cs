@@ -2,8 +2,8 @@
 
 namespace EM.Data
 {
-    public class EMDbInitializer:CreateDatabaseIfNotExists<EMContext>
-    {
+    public class EMDbInitializer:DropCreateDatabaseIfModelChanges<EMContext>
+    {   
         
          
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,9 @@ namespace EM.DbCreator
     {
         static void Main(string[] args)
         {
-            new EMDbInitializer().InitializeDatabase(new EMContext());
+            Database.SetInitializer(new EMDbInitializer());
+            var context = new EMContext();
+            context.Database.Initialize(true);
         }
     }
 }

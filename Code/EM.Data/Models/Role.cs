@@ -1,7 +1,6 @@
 ﻿using System;
-using EM.Data.Models;
 
-namespace EM.Model
+namespace EM.Data.Models
 {
     public class Role
     {
@@ -16,6 +15,7 @@ namespace EM.Model
                     Value = role;
             }
         }
+
 
     }
 }

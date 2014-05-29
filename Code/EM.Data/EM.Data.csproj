@@ -50,7 +50,7 @@
   <ItemGroup>
     <Compile Include="EMContext.cs" />
     <Compile Include="EMDBInitializer.cs" />
-    <Compile Include="Mappings\UserMapping.cs" />
+    <Compile Include="Mappings\UserConfiguration.cs" />
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\EMMembership.cs" />
     <Compile Include="Models\Role.cs" />

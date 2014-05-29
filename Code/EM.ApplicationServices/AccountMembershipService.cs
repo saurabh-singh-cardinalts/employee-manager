@@ -7,7 +7,6 @@ using EM.ApplicationServices.ServiceModel;
 using EM.Data.Models;
 using EM.Framework.Data.Repository;
 using EM.Framework.Extensions;
-using EM.Model;
 using EM.Specification.Interfaces;
 
 namespace EM.ApplicationServices
