@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.Migrations;
 
 namespace EM.Data
 {
@@ -8,13 +9,22 @@ namespace EM.Data
          
     }
 
-    public class MigrateInitializer : IDatabaseInitializer<EMContext>
+    public class EMMigrationConfiguration<T> : DbMigrationsConfiguration<T> where T:EMContext
     {
-        public void InitializeDatabase(EMContext context)
+        public EMMigrationConfiguration()
         {
-            //context.
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = false;
         }
     }
 
+    public class EMMigrationInitializer<T> : MigrateDatabaseToLatestVersion<T, EMMigrationConfiguration<T>> where T : EMContext
+    { 
+        
+    }
+
+
+
+    
    
 }
