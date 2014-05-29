@@ -1,0 +1,12 @@
+D:\EManager\employee-manager\Code\EM.DbCreator\bin\Debug\EM.DbCreator.exe.config
+D:\EManager\employee-manager\Code\EM.DbCreator\bin\Debug\EM.DbCreator.exe
+D:\EManager\employee-manager\Code\EM.DbCreator\bin\Debug\EM.DbCreator.pdb
+D:\EManager\employee-manager\Code\EM.DbCreator\bin\Debug\EM.Data.dll
+D:\EManager\employee-manager\Code\EM.DbCreator\bin\Debug\EntityFramework.dll
+D:\EManager\employee-manager\Code\EM.DbCreator\bin\Debug\EntityFramework.SqlServer.dll
+D:\EManager\employee-manager\Code\EM.DbCreator\bin\Debug\EM.Data.pdb
+D:\EManager\employee-manager\Code\EM.DbCreator\bin\Debug\EntityFramework.xml
+D:\EManager\employee-manager\Code\EM.DbCreator\bin\Debug\EntityFramework.SqlServer.xml
+D:\EManager\employee-manager\Code\EM.DbCreator\obj\Debug\EM.DbCreator.csprojResolveAssemblyReference.cache
+D:\EManager\employee-manager\Code\EM.DbCreator\obj\Debug\EM.DbCreator.exe
+D:\EManager\employee-manager\Code\EM.DbCreator\obj\Debug\EM.DbCreator.pdb
