@@ -16,9 +16,9 @@ namespace EM.DbCreator
                 Console.WriteLine("2. Migrate Database");
                 Console.WriteLine("3. Exit");
                 Console.WriteLine("---------------------------------");
-                Console.Write("Enter your choice: ");
+                Console.WriteLine("Enter your choice: ");
 
-                int choice = Convert.ToInt32(Console.ReadKey());
+                int choice = Convert.ToInt32(Console.ReadLine());
 
                 switch (choice)
                 {

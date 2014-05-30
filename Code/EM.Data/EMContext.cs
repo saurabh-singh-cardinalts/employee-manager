@@ -11,6 +11,13 @@ namespace EM.Data
         public DbSet<Membership> Membership { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
+        public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<Qualification> Qualifications { get; set; }
+        public DbSet<License> Licenses { get; set; }
+        public DbSet<Skill> Skills { get; set; }
+        public DbSet<Language> Languages { get; set; }
+        public DbSet<WorkExperience> WorkExperiences { get; set; }
+        public DbSet<Education> Educations { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

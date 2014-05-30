@@ -41,4 +41,82 @@ namespace EM.Data.Mappings
             Property(t => t.VoterId).IsOptional();
         }
     }
+
+    public class QualificationConfiguration : EntityTypeConfiguration<Qualification>
+    {
+        public QualificationConfiguration()
+        {
+            HasKey(t => t.Id);
+            Property(t => t.Id).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            HasMany(t => t.Languages).WithOptional().HasForeignKey(t => t.Id).WillCascadeOnDelete();
+            HasMany(t => t.WorkExperiences).WithOptional().HasForeignKey(t => t.Id).WillCascadeOnDelete();
+            HasMany(t => t.Educations).WithOptional().HasForeignKey(t => t.Id).WillCascadeOnDelete();
+            HasMany(t => t.Skills).WithOptional().HasForeignKey(t => t.Id).WillCascadeOnDelete();
+            HasMany(t => t.Languages).WithOptional().HasForeignKey(t => t.Id).WillCascadeOnDelete();
+            HasMany(t => t.Licenses).WithOptional().HasForeignKey(t => t.Id).WillCascadeOnDelete();
+        }
+    }
+
+    public class LicenseConfiguration : EntityTypeConfiguration<License>
+    {
+        public LicenseConfiguration()
+        {
+            HasKey(t => t.Id);
+            Property(t => t.Id).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Property(t=>t.LicenseType).IsOptional().HasMaxLength(128);
+            Property(t => t.IssuedDate).IsOptional();
+            Property(t => t.ExpiryDate).IsOptional();
+        }
+    }
+
+    public class SkillConfiguration : EntityTypeConfiguration<Skill>
+    {
+        public SkillConfiguration()
+        {
+            HasKey(t => t.Id);
+            Property(t => t.Id).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Property(t => t.Name).IsOptional().HasMaxLength(256);
+            Property(t => t.Year).IsOptional();
+        }
+    }
+
+    public class LanguageConfiguration : EntityTypeConfiguration<Language>
+    {
+        public LanguageConfiguration()
+        {
+            HasKey(t => t.Id);
+            Property(t => t.Id).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Property(t => t.Name).IsOptional().HasMaxLength(256);
+            Property(t => t.Fluency).IsOptional().HasMaxLength(256);
+            Property(t => t.Competency).IsOptional().HasMaxLength(256);
+            Property(t => t.Comments).IsOptional().HasMaxLength(256);
+        }
+    }
+
+    public class WorkExperienceConfiguration : EntityTypeConfiguration<WorkExperience>
+    {
+        public WorkExperienceConfiguration()
+        {
+            HasKey(t => t.Id);
+            Property(t => t.Id).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Property(t => t.CompanyName).IsOptional().HasMaxLength(256);
+            Property(t => t.JobTitle).IsOptional().HasMaxLength(256);
+            Property(t => t.StartDate).IsOptional();
+            Property(t => t.EndDate).IsOptional();
+            Property(t => t.Comment).IsOptional().HasMaxLength(256);
+        }
+    }
+
+    public class EducationConfiguration : EntityTypeConfiguration<Education>
+    {
+        public EducationConfiguration()
+        {
+            HasKey(t => t.Id);
+            Property(t => t.Id).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Property(t => t.EducationLevel).IsOptional().HasMaxLength(256);
+            Property(t => t.Year).IsOptional();
+            Property(t => t.Score).IsOptional();
+        }
+    }
+
 }

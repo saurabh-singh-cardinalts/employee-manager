@@ -8,7 +8,7 @@ namespace EM.Data.Models
         public int Id { get; set; }
         public List<WorkExperience> WorkExperiences { get; set; }
         public List<Education> Educations { get; set; }
-        public List<Skills> Skills { get; set; }
+        public List<Skill> Skills { get; set; }
         public List<Language> Languages { get; set; }
         public List<License> Licenses { get; set; }
     }
@@ -23,7 +23,7 @@ namespace EM.Data.Models
         public DateTime ExpiryDate { get; set; }
     }
 
-    public class Skills
+    public class Skill
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -52,7 +52,7 @@ namespace EM.Data.Models
     public class Education
     {
         public int Id { get; set; }
-        public string Level { get; set; }
+        public string EducationLevel { get; set; }
         public string Year { get; set; }
         public string Score { get; set; }
     }
