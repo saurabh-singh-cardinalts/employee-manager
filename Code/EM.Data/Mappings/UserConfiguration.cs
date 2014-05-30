@@ -17,36 +17,28 @@ namespace EM.Data.Mappings
             Property(t => t.Phone).HasMaxLength(256).IsRequired();
             Ignore(t => t.Status);
             Ignore(t => t.Gender);
-            Ignore(t => t.OtherInformation);
-            HasOptional(t => t.Address).WithMany().HasForeignKey(t => t.AddressId);
             HasMany(t => t.Roles).WithMany().Map(m => { m.ToTable("UserRole"); m.MapLeftKey("UserId"); m.MapRightKey("RoleName"); });
-            HasRequired(t => t.EMMembership).WithRequiredPrincipal(t => t.User).WillCascadeOnDelete();
-            //HasOptional(t => t.UserPreference).WithRequired().WillCascadeOnDelete(true);
+            HasRequired(t => t.Membership).WithRequiredPrincipal(t => t.User).WillCascadeOnDelete();
             
-
+            HasOptional(t => t.Address).WithMany().HasForeignKey(t => t.AddressId);
+            HasOptional(t => t.UserProfile).WithMany().HasForeignKey(t => t.UserProfileId).WillCascadeOnDelete();
         }
     }
 
-    public class RoleConfiguration : EntityTypeConfiguration<Role>
-    {
-        public RoleConfiguration()
-        {
-            HasKey(t => t.RoleName);
-            Property(t => t.RoleName).HasColumnName("RoleName").IsRequired().HasMaxLength(128);
-            Ignore(t => t.Value);
-        }
-    }
 
-    public class MembershipConfiguration : EntityTypeConfiguration<EMMembership>
+    public class UserProfileConfiguration : EntityTypeConfiguration<UserProfile>
     {
-        public MembershipConfiguration()
+        public UserProfileConfiguration()
         {
             HasKey(t => t.Id);
-            Property(t => t.Id).HasColumnName("PmlMemberShipId");
-            Property(t => t.ConfirmationToken).HasMaxLength(128);
-            Property(t => t.Password).IsRequired().HasMaxLength(128);
-            Property(t => t.PasswordVerificationToken).HasMaxLength(128);
-
+            Property(t => t.Id).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Property(t => t.OtherId).IsOptional();
+            Property(t => t.DLNumber).IsOptional();
+            Property(t => t.DLExpiryDate).IsOptional();
+            Property(t => t.AdharCard).IsOptional();
+            Property(t => t.BankAccount).IsOptional();
+            Property(t => t.PanCard).IsOptional();
+            Property(t => t.VoterId).IsOptional();
         }
     }
 }

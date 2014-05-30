@@ -1,4 +1,5 @@
 ﻿using System;
+using EM.Data.Enums;
 
 namespace EM.Data.Models
 {

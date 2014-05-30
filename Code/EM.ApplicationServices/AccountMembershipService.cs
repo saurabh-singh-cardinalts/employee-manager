@@ -4,6 +4,7 @@ using System.Linq;
 using EM.ApplicationServices.Infrastructure;
 using EM.ApplicationServices.Interfaces;
 using EM.ApplicationServices.ServiceModel;
+using EM.Data.Enums;
 using EM.Data.Models;
 using EM.Framework.Data.Repository;
 using EM.Framework.Extensions;
@@ -84,7 +85,7 @@ namespace EM.ApplicationServices
             }
 
 
-            var membership = user.EMMembership ?? new EMMembership();
+            var membership = user.Membership ?? new Membership();
             var hashedPassword = (membership.IsConfirmed ?? true) ? membership.Password : membership.PasswordVerificationToken.EncryptToMd5Hash();
 
             var verificationSucceeded = (hashedPassword != null && password.EncryptToMd5Hash() == hashedPassword);
@@ -123,30 +124,30 @@ namespace EM.ApplicationServices
         {
             var user = _userRepository.Read<IUserSpecification>().WithName(userName).IncludeMemberShip().ToResult().SingleOrDefault();
 
-            string hashedPassword = user.EMMembership.Password;
+            string hashedPassword = user.Membership.Password;
             bool verificationSucceeded = (hashedPassword != null && oldPassword.EncryptToMd5Hash() == hashedPassword);
             if (verificationSucceeded)
             {
-                user.EMMembership.PasswordFailuresSinceLastSuccess = 0;
+                user.Membership.PasswordFailuresSinceLastSuccess = 0;
                 string newHashedPassword = newPassword.EncryptToMd5Hash();
                 if (newHashedPassword.Length > 128)
                 {
                     throw new EMApplicationException("UserName", EMApplicationConstants.InvalidNewOrOldPassword);
                 }
-                user.EMMembership.Password = newHashedPassword;
-                user.EMMembership.LastPasswordFailureDate = DateTime.UtcNow;
+                user.Membership.Password = newHashedPassword;
+                user.Membership.LastPasswordFailureDate = DateTime.UtcNow;
             }
             else
             {
-                int failures = user.EMMembership.PasswordFailuresSinceLastSuccess ?? 0;
+                int failures = user.Membership.PasswordFailuresSinceLastSuccess ?? 0;
                 if (failures < invalidattempts)
                 {
-                    user.EMMembership.PasswordFailuresSinceLastSuccess += 1;
-                    user.EMMembership.LastPasswordFailureDate = DateTime.UtcNow;
+                    user.Membership.PasswordFailuresSinceLastSuccess += 1;
+                    user.Membership.LastPasswordFailureDate = DateTime.UtcNow;
                 }
                 else if (failures >= invalidattempts)
                 {
-                    user.EMMembership.LastPasswordFailureDate = DateTime.UtcNow;
+                    user.Membership.LastPasswordFailureDate = DateTime.UtcNow;
 
                 }
                 verificationSucceeded = false;
@@ -172,7 +173,7 @@ namespace EM.ApplicationServices
                 if (user == null)
                     throw new EMApplicationException("ResetPassword", EMApplicationConstants.InvalidUserName);
 
-                var membership = user.EMMembership ?? new EMMembership();
+                var membership = user.Membership ?? new Membership();
                 membership.LastPasswordFailureDate = DateTime.UtcNow;
                 membership.PasswordChangedDate = DateTime.UtcNow;
                 membership.PasswordFailuresSinceLastSuccess = 0;
@@ -187,7 +188,7 @@ namespace EM.ApplicationServices
                 user = _userRepository.Read<IUserSpecification>().WithToken(passwordToken).IncludeMemberShip().ToResult().SingleOrDefault();
                 if (user == null)
                     throw new EMApplicationException("PasswordToken", EMApplicationConstants.InvalidToken);
-                var membership = user.EMMembership ?? new EMMembership();
+                var membership = user.Membership ?? new Membership();
                 membership.LastPasswordFailureDate = DateTime.UtcNow;
                 membership.PasswordChangedDate = DateTime.UtcNow;
                 membership.PasswordFailuresSinceLastSuccess = 0;
@@ -273,7 +274,7 @@ namespace EM.ApplicationServices
 
         private void CreateEMMemberShip(string password, User newUser)
         {
-            newUser.EMMembership = new EMMembership
+            newUser.Membership = new Membership
             {
                 Id = newUser.Id,
                 //User = newUser,
@@ -304,7 +305,7 @@ namespace EM.ApplicationServices
             if (user == null) 
                 throw new EMApplicationException("UserName", EMApplicationConstants.IncorrectUserName);
 
-            var membership = user.EMMembership;
+            var membership = user.Membership;
             if (!string.IsNullOrEmpty(newPassword) && !string.IsNullOrEmpty(oldPassword))
             {
                 string hashedPassword = membership.Password;

@@ -52,11 +52,17 @@
     <Compile Include="EMDBInitializer.cs" />
     <Compile Include="EMMigrationConfiguration.cs" />
     <Compile Include="EMMigrationInitializer.cs" />
+    <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Mappings\MembershipConfiguration.cs" />
+    <Compile Include="Mappings\RoleConfiguration.cs" />
     <Compile Include="Mappings\UserConfiguration.cs" />
     <Compile Include="Models\BaseEntity.cs" />
-    <Compile Include="Models\EMMembership.cs" />
+    <Compile Include="Models\Membership.cs" />
+    <Compile Include="Models\Job.cs" />
+    <Compile Include="Models\Qualification.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

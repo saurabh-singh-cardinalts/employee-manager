@@ -15,13 +15,13 @@ namespace EM.Specification
 
         public IUserSpecification IncludeMemberShip()
         {
-            FetchStrategy.Include(t => t.EMMembership);
+            FetchStrategy.Include(t => t.Membership);
             return this;
         }
 
         public IUserSpecification WithToken(string token)
         {
-            Predicate = user => (user.EMMembership.PasswordVerificationToken == token) && DateTime.Compare(user.EMMembership.PasswordVerificationTokenExpirationDate ?? DateTime.UtcNow, DateTime.UtcNow) > 0;
+            Predicate = user => (user.Membership.PasswordVerificationToken == token) && DateTime.Compare(user.Membership.PasswordVerificationTokenExpirationDate ?? DateTime.UtcNow, DateTime.UtcNow) > 0;
             return this;
         }
     }

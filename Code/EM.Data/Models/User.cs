@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using EM.Data.Enums;
 
 namespace EM.Data.Models
 {
@@ -42,15 +43,23 @@ namespace EM.Data.Models
             }
         }
 
-        public Address Address { get; set; }
         public int? AddressId { get; set; }
-
+        public Address Address { get; set; }
+        
         public List<Role> Roles { get; set; }
-        public OtherInformation OtherInformation { get; set; }
        
         public DateTime? LastLoggedInDate { get; set; }
         public DateTime RegistrationDate { get; set; }
      
-        public EMMembership EMMembership { get; set; }
+        public Membership Membership { get; set; }
+
+        public int? UserProfileId { get; set; }
+        public UserProfile UserProfile { get; set; }
+
+        public int? QualificationId { get; set; }
+        public Qualification Qualification { get; set; }
+
+        public int? JobId { get; set; }
+        public Job Job { get; set; }
     }
 }

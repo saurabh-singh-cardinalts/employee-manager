@@ -8,7 +8,7 @@ namespace EM.Data
     {
         public EMContext() : base("emContext") { }
 
-        public DbSet<EMMembership> Membership { get; set; }
+        public DbSet<Membership> Membership { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
 
